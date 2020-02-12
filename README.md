@@ -23,36 +23,11 @@ Prepare your bam file, *mybam.bam* in advance.
 
 Run the following command:
 
-`./getCov.sh mybam.bam reference.txt.TSS.unique.2K.bed`
+`./getCov1.sh mybam.bam reference.txt.TSS.unique.2K.bed`
 
-This step contain two lines of code and each line may take a few minutes, so it is also recommended run it separately.
+After it finishes, run the following command:
 
-In detail, first edit your getCov.sh file like this:
-`cat getCov.sh`
-
-` # $1 is a bam file, $2 is the bed file of interesting regions.`
-
-` # output the coverage per base in the regions`
-
-` bedtools intersect -a $1 -b $2 -ubam -wa -u > "$1".sel.bam`
-
-` #bedtools genomecov -ibam "$1".sel.bam -dz | grep -v "chrM" > "$1".sel.bam.gc`
-
-
-And run the command line as above.
-Then, edit your getCov.sh file again:
-`cat getCov.sh`
-
-` # $1 is a bam file, $2 is the bed file of interesting regions.`
-
-` # output the coverage per base in the regions`
-
-` #bedtools intersect -a $1 -b $2 -ubam -wa -u > "$1".sel.bam`
-
-` bedtools genomecov -ibam "$1".sel.bam -dz | grep -v "chrM" > "$1".sel.bam.gc`
-
-
-And run the command again.
+`./getCov2.sh mybam.bam reference.txt.TSS.unique.2K.bed`
 
 You will get *mybam.bam.sel.bam*, which is the bam file with reads in your TSS flank regions, and *mybam.bam.sel.bam.gc*, which is the genome coverage file.
 
