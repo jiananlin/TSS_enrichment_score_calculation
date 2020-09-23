@@ -3,7 +3,9 @@ ATAC-seq data Transcript Start Site (TSS) enrichment score calculation.
 
 ## Step0: Preparing reference files.
 We are using the TSS from the UCSC Refseq annotation, hg19 for example.
-The procedures of this step can be found at [this nice post](https://randomstate.net/2018-06-28-getting-refseq-gene-tss-from-ucsc/).
+The procedures of this step can be found at [this nice post](https://randomstate.net/2018-06-28-getting-refseq-gene-tss-from-ucsc/). (Seems it's a disrupted link)
+The annotation table can be downloaded from [UCSC Table Browser](https://genome-euro.ucsc.edu/cgi-bin/hgTables).
+![how to get the annotation file](./ucsc.png)
 Assuming the downloaded annotation file, *reference.txt*, is ready, which should include columns in the following order:
 
 |bin	|name	|chrom	|strand	|txStart	|txEnd	|cdsStart	|cdsEnd	|exonCount	|exonStarts	|exonEnds	|score	|name2	|cdsStartStat	|cdsEndStat	|exonFrames|
